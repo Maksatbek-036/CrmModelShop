@@ -13,6 +13,7 @@ namespace CrmBlTest
         {
             var model = new ShopComputerModel();
             model.Start();
+            Thread.Sleep(1000);
         }
     }
 }

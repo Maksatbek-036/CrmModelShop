@@ -13,7 +13,6 @@ namespace CrmBL.Model
         public List<Check> Checks { get; set; } = new List<Check>();
         public List<Customer> Customers { get; set; } = new List<Customer>();
         public List<Product> Products { get; set; }=new List<Product>();
-
         public List<Seller> Sellers { get; set; } = new List<Seller>();
         public List<Customer> GetNewCustomers(int count)
         {

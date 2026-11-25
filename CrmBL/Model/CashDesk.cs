@@ -14,6 +14,7 @@ namespace CrmBL.Model
         public bool IsModel { get; set; }
         public int ExitCustomer { get; set; }
         public int Count => Queue.Count();
+        public event EventHandler<Check> CheckClose;
 
         public CashDesk(int number, Seller seller)
         {
@@ -84,12 +85,14 @@ namespace CrmBL.Model
                         summ += product.Price;
                      
                     }
+                    check.Price = summ;
 
                 }
                 if (!IsModel)
                 {
                     dbContext.SaveChanges();
                 }
+                CheckClose?.Invoke(this, check);
 
             }
                 return summ;
